@@ -81,7 +81,7 @@ DATABASES = {
         'USER': 'bcz-admin',
         'PASSWORD': '@dmin123',
         'HOST': 'bcz.database.windows.net',
-        'PORT': '5432',
+        'PORT': '',
     }
 }
 
