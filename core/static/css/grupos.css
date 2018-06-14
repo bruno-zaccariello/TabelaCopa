@@ -1,0 +1,49 @@
+h2 {
+    font-size: 16px;
+    margin: 10px auto;
+    text-align: center;
+}
+
+.grupos_wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    margin: 15px auto;
+    width: 70%;
+}
+
+.grupo_box {
+    border: 2px solid yellow;
+    border-radius: 10px;
+    box-shadow: 2px 5px 15px 0 black;
+    height: 200px;
+    margin: 20px auto;
+    width: 300px;
+}
+
+.grupo_box:hover {
+    background-color: rgba(0, 0, 0, .1);
+    border: 2px solid black;
+}
+
+.grupo_title {
+    border-bottom: 1px solid black;
+    width: 100%;
+}
+
+.grupo_times {
+    background-color: rgb(166, 208, 166);
+    background-color: rgba(166, 208, 166, 0.8);
+    border-radius: 0 0 10px 10px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    height: 80%;
+}
+
+.grupo_time {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0 auto;
+    width: 90%;
+}

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block statics %}
+
+    <link rel="stylesheet" type="text/css" href="/static/css/grupos.css">
+
+{% endblock statics %}
+
+{% block content %}
+
+    <div class="grupos_wrapper">
+
+    {% for grupo, times in content %}
+
+        <a href="/grupo/{{ grupo.pkid_grupo }}" class="grupo_box">
+
+            <div class="grupo_title"> 
+                
+                <h2> {{ grupo }} </h2> 
+
+            </div>
+
+            <div class="grupo_times">
+
+            {% for time in times %}
+
+                <div class="grupo_time">{{ time }}</div>
+
+            {% endfor %}
+
+            </div>
+
+        </a>
+
+    {% endfor %}
+
+    </div>
+
+{% endblock content %}
