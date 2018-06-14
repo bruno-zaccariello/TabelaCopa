@@ -76,8 +76,12 @@ WSGI_APPLICATION = 'tabelacopa.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'sql_server.pyodbc',
+        'NAME': 'tabelacopadb',
+        'USER': 'bcz-admin',
+        'PASSWORD': '@dmin123',
+        'HOST': 'bcz.database.windows.net',
+        'PORT': '5432',
     }
 }
 
