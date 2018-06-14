@@ -74,8 +74,8 @@ pushd "%DEPLOYMENT_TARGET%"
 :: 2. Create virtual environment
  IF NOT EXIST "%DEPLOYMENT_TARGET%\env" (
    echo Creating %PYTHON_RUNTIME% virtual environment.
-   D:\home\Python27\python.exe -m pip install virtualenv
-   D:\home\Python27\python.exe -m virtualenv env
+   D:\home\Python36\python.exe -m pip install virtualenv
+   D:\home\Python36\python.exe -m virtualenv env
    IF !ERRORLEVEL! NEQ 0 goto error
  ) ELSE (
    echo Found compatible virtual environment.
