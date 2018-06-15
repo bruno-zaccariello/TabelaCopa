@@ -21,6 +21,7 @@
 .tb_content {
     display: flex;
     flex-flow: column nowrap;
+    background-color: #a6d0a6;
 }
 
 .tb_team_row {
@@ -61,4 +62,10 @@ div.tb_team_row.main div.nome {
     height: 1px;
     background-color: black;
     width: 100%;
+}
+
+@media screen and (max-width: 900px) {
+    .tb_group {
+        width: 80%;
+    }
 }

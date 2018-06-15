@@ -43,3 +43,9 @@ div.menu_link:hover {
 .content {
     width: 100%;
 }
+
+@media screen and (max-width: 900px) {
+    .div.menu_link {
+        width: 50%;
+    }  
+}
