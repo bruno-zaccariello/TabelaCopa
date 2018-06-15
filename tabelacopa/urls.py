@@ -20,6 +20,7 @@ from core.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name="index"),
-    path('add_partida/', add_partida, name="add_partida"),
+    path('add_partida/8426', add_partida, name="add_partida"),
+    path('add_calendario/8426', add_calendario, name="add_calendario"),
     path('grupo/<int:id_grupo>/', tab_grupo, name="tab_grupo")
 ]
