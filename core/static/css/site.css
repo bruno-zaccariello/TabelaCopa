@@ -44,7 +44,7 @@ div.menu_link:hover {
     width: 100%;
 }
 
-@media screen and (max-width: 900px) and (orientation: portrait) {
+@media screen and (max-width: 5000px) {
     .div.menu_link {
         width: 50%;
     }  

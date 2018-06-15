@@ -48,7 +48,7 @@ h2 {
     width: 90%;
 }
 
-@media screen and (max-width: 900px) and (orientation: portrait) {
+@media screen and (max-width: 3000px) {
     
     .grupos_wrapper {
         width: 95%;
