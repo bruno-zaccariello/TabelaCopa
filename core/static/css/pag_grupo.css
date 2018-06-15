@@ -1,0 +1,64 @@
+.vertical {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+}
+
+.tb_group {
+    border: 2px solid yellow;
+    border-radius: 10px;
+    margin: 20px auto;
+    width: 50%;
+}
+
+.tb_title {
+    border-bottom: 1px solid black;
+    font-size: 16px;
+    text-align: center;
+    margin: 5px auto 0;
+}
+
+.tb_content {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.tb_team_row {
+    display: flex;
+    font-size: 19px;
+    font-weight: 600;
+    flex-flow: row nowrap;
+    height: 30px;
+    width: 90%;
+    margin: 10px auto;
+}
+
+div.tb_team_row.leg {
+    text-align: center;
+}
+
+.num {
+    width: 10%;
+    text-align: center;
+}
+
+.nome {
+    width: 40%;
+}
+
+div.tb_team_row.main div.nome {
+    padding-left: 25px;
+}
+
+.borda_v {
+    height: 100%;
+    border: 1px solid black;
+    width: 1px;
+}
+
+.borda_h {
+    margin: 1px auto;
+    height: 1px;
+    background-color: black;
+    width: 100%;
+}

@@ -7,7 +7,7 @@
 # Feel free to rename the models, but don't rename db_table values or field names.
 from django.db import models
 
-__all__ = ['Grupos', 'Partida', 'Times', 'FtPartidaTimes']
+__all__ = ['Grupos', 'Partida', 'Times']
 
 class Grupos(models.Model):
     pkid_grupo = models.IntegerField(primary_key=True)
@@ -22,20 +22,6 @@ class Grupos(models.Model):
         verbose_name_plural = 'Grupos'
 
 
-class Partida(models.Model):
-    pkid_partida = models.IntegerField(primary_key=True)
-    fkid_grupo = models.ForeignKey(Grupos, models.DO_NOTHING, db_column='fkid_grupo')
-    vencedor = models.ForeignKey('Times', models.DO_NOTHING, db_column='vencedor', blank=True, null=True)
-
-    def __str__(self):
-        return self.pkid_partida
-
-    class Meta:
-        managed = True
-        db_table = 'partida'
-        verbose_name_plural = 'Partidas'
-
-
 class Times(models.Model):
     pkid_time = models.IntegerField(primary_key=True)
     fkid_grupo = models.ForeignKey(Grupos, models.DO_NOTHING, db_column='fkid_grupo', blank=True, null=True)
@@ -44,6 +30,7 @@ class Times(models.Model):
     empates = models.IntegerField(blank=True, null=True)
     derrotas = models.IntegerField(blank=True, null=True)
     pontos = models.IntegerField(blank=True, null=True)
+    saldo_gols = models.IntegerField()
 
     def __str__(self):
         return self.nome_time
@@ -54,12 +41,12 @@ class Times(models.Model):
         verbose_name_plural = 'Times'
 
 
-class FtPartidaTimes(models.Model):
-    pkid_fato_partida_times = models.IntegerField(primary_key=True)
+class Partida(models.Model):
+    pkid_partida = models.IntegerField(primary_key=True)
     fkid_time = models.ForeignKey('Times', models.DO_NOTHING, db_column='fkid_time')
-    fkid_partida = models.ForeignKey('Partida', models.DO_NOTHING, db_column='fkid_partida')
+    id_partida = models.CharField(max_length=2)
     qtd_gols = models.IntegerField()
 
     class Meta:
         managed = True
-        db_table = 'FT_partida_times'
+        db_table = 'partida'

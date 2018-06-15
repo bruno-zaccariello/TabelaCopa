@@ -25,7 +25,7 @@ SECRET_KEY = '9l^%9v1&euj=!p62z25k+a6!dr2h8ctu-)=+!^(u9hdn75&ak#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['tabelacopa.azurewebsites.net']
+ALLOWED_HOSTS = []
 
 
 # Application definition

@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+
+{% block statics %}
+    <link rel="stylesheet" type="text/css" href="/static/css/pag_grupo.css">
+{% endblock %}
+
+{% block content %}
+
+    <div class="tb_group">
+    
+    <div class="tb_title">
+        <h2> {{ grupo.nome_grupo }} </h2>
+    </div>
+
+    <div class="tb_content">
+        
+        <div class="tb_team_row leg">
+            
+            <div class="num vertical">Pos.</div>
+
+            <div class="nome vertical">País</div>
+
+            <div class="num vertical">Pts.</div>
+
+            <div class="num vertical">V</div>
+        
+            <div class="num vertical">E</div>
+
+            <div class="num vertical">D</div>
+   
+            <div class="num vertical">SG</div>
+
+        </div>
+
+        <div class="borda_h"></div>
+
+        <div class="tb_team_row main">
+            
+            <div class="num vertical">1º</div>
+
+            <div class="nome vertical">{{ times.0.nome_time }}</div>
+
+            <div class="num vertical">{{ times.0.pontos }}</div>
+
+            <div class="num vertical">{{ times.0.vitorias }}</div>
+
+            <div class="num vertical">{{ times.0.empates }}</div>
+
+            <div class="num vertical">{{ times.0.derrotas }}</div>
+
+            <div class="num vertical">{{ times.0.saldo_gols }}</div>
+
+        </div>
+        
+        <div class="borda_h"></div>
+
+        <div class="tb_team_row main">
+            
+            <div class="num vertical">2º</div>
+
+            <div class="nome vertical">{{ times.1.nome_time }}</div>
+
+            <div class="num vertical">{{ times.1.pontos }}</div>
+
+            <div class="num vertical">{{ times.1.vitorias }}</div>
+
+            <div class="num vertical">{{ times.1.empates }}</div>
+
+            <div class="num vertical">{{ times.1.derrotas }}</div>
+
+            <div class="num vertical">{{ times.1.saldo_gols }}</div>
+
+        </div>
+        
+        <div class="borda_h"></div>
+
+        <div class="tb_team_row main">
+            
+            <div class="num vertical">3º</div>
+
+            <div class="nome vertical">{{ times.2.nome_time }}</div>
+
+            <div class="num vertical">{{ times.2.pontos }}</div>
+
+            <div class="num vertical">{{ times.2.vitorias }}</div>
+
+            <div class="num vertical">{{ times.2.empates }}</div>
+
+            <div class="num vertical">{{ times.2.derrotas }}</div>
+
+            <div class="num vertical">{{ times.2.saldo_gols }}</div>
+
+        </div>
+        
+        <div class="borda_h"></div>
+
+        <div class="tb_team_row main">
+            
+            <div class="num vertical">4º</div>
+
+            <div class="nome vertical">{{ times.3.nome_time }}</div>
+
+            <div class="num vertical">{{ times.3.pontos }}</div>
+
+            <div class="num vertical">{{ times.3.vitorias }}</div>
+
+            <div class="num vertical">{{ times.3.empates }}</div>
+
+            <div class="num vertical">{{ times.3.derrotas }}</div>
+
+            <div class="num vertical">{{ times.3.saldo_gols }}</div>
+
+    </div>
+
+    </div>
+
+{% endblock content %}
