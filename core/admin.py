@@ -36,3 +36,4 @@ class GrupoAdmin(admin.ModelAdmin):
         
 admin.site.register(Times, TimeAdmin)
 admin.site.register(Grupos, GrupoAdmin)
+admin.site.register(Partida)

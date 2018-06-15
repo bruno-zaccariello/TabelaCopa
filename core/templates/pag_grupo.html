@@ -2,6 +2,7 @@
 
 {% block statics %}
     <link rel="stylesheet" type="text/css" href="/static/css/pag_grupo.css">
+    <script src="/static/js/pag_grupo.js"></script>
 {% endblock %}
 
 {% block content %}
@@ -111,6 +112,52 @@
             <div class="num vertical">{{ times.3.saldo_gols }}</div>
 
     </div>
+
+    </div>
+
+    </div>
+
+    <div class="matches">
+        <div class="bt_side">
+            <button class="btShow" onclick="show_matches()" type="button">Partidas</button>
+        </div>
+
+        <div id="matches_side" class="matches_side hide">
+            
+            {% for jogo, resultado in jogos %}
+            <div class="results">
+
+                <div class=data>{{ jogo.0.data }}</div>
+
+                <div class="time casa">{{ jogo.0.fkid_time }}</div>
+
+
+                <div class="resultado">
+                {% if resultado.0.qtd_gols %}
+                    {{ resultado.0.qtd_gols }}
+                {% else %}
+                    0
+                {% endif %}
+                </div>
+
+                X
+
+                <div class="resultado">
+                {% if resultado.1.qtd_gols %}
+                    {{ resultado.1.qtd_gols }}
+                {% else %}
+                    0
+                {% endif %}
+                </div>
+
+                <div class="time">
+                {{ jogo.1.fkid_time }}
+                </div>
+
+            </div>
+            {% endfor %}
+
+        </div>
 
     </div>
 

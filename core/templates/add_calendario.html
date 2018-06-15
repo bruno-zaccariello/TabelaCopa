@@ -2,18 +2,18 @@
 
 {% block statics %}
 
-    <link rel="stylesheet" type="text/css" href="/static/css/add_partida.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/add_calendario.css">
 
 {% endblock statics %}
 
 {% block content %}
     
-    <form method="POST">
+    <form name='my_form' method="POST">
 
     {% csrf_token %}
-    {{ PartidaForm.management_form }}
+    {{ CalendarioForm.management_form }}
 
-    {% for form in PartidaForm %}
+    {% for form in CalendarioForm %}
     
         {% for field in form %}
             
@@ -24,6 +24,9 @@
         {% endfor %}
 
     {% endfor %}
+
+    <label for='data_input'>Data</label>
+    <input name='data_input' type='datetime-local'>
 
     <button type="submit">Salvar</button>
 

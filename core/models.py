@@ -6,8 +6,9 @@
 #   * Remove `managed = False` lines if you wish to allow Django to create, modify, and delete the table
 # Feel free to rename the models, but don't rename db_table values or field names.
 from django.db import models
+import datetime
 
-__all__ = ['Grupos', 'Partida', 'Times']
+__all__ = ['Grupos', 'Partida', 'Times', 'Calendario']
 
 class Grupos(models.Model):
     pkid_grupo = models.IntegerField(primary_key=True)
@@ -50,3 +51,13 @@ class Partida(models.Model):
     class Meta:
         managed = True
         db_table = 'partida'
+        
+class Calendario(models.Model):
+    pkid_calendario = models.IntegerField(primary_key=True)
+    fkid_time = models.ForeignKey('Times', models.DO_NOTHING, db_column='fkid_time')
+    id_partida = models.CharField(max_length=2)
+    data = models.DateTimeField(default=datetime.datetime.now())
+    
+    class Meta:
+        managed = True
+        db_table = 'calendario'

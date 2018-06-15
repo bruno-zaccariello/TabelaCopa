@@ -9,3 +9,11 @@ class PartidaForm(forms.ModelForm):
     class Meta:
         model = Partida
         exclude = ['pkid_partida', 'id_partida']
+        
+class CalendarioForm(forms.ModelForm):
+    fkid_time = forms.ModelChoiceField(label="Time", queryset=Times.objects.all(), initial=0)
+    
+    
+    class Meta:
+        model = Calendario
+        exclude = ['pkid_calendario', 'id_partida', 'data', 'finalizado']
