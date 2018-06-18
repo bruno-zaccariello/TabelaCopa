@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '9l^%9v1&euj=!p62z25k+a6!dr2h8ctu-)=+!^(u9hdn75&ak#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['tabelacopa.azurewebsites.net']
 
