@@ -1,0 +1,22 @@
+.user_nav {
+    display: flex;
+    flex-flow: column nowrap;
+    margin: 30px auto;
+    width: 50%;
+}
+
+.nav_link {
+    border: 2px solid white;
+    border-radius: 10px;
+    font-size: 18px;
+    height: 75px;
+    line-height: 75px;
+    margin: 15px auto;
+    text-align: center;
+    width: 250px;
+}
+
+.nav_link:hover {
+    border-color: #ccc;
+    background-color: rgba(200,200,200,.3)
+}

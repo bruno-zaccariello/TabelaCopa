@@ -1,7 +1,17 @@
 {% extends 'base.html' %}
 
+{% block statics %}
+    <link rel="stylesheet" type="text/css" href="/static/css/user_profile.css">
+{% endblock statics %}
+
 {% block content %}
 
-	<a href="logout">Sair</a>
+    <nav class="user_nav">
+
+	<a class="nav_link" href="logout">Sair</a>
+    
+    <a class="nav_link" href="add_partida">Adicionar Partida</a>
+
+    </nav>
 
 {% endblock content %}
