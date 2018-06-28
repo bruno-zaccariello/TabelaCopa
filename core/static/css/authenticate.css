@@ -1,0 +1,25 @@
+.options {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    margin: 25vh auto;
+    height: 150px;
+    width: 100%;
+}
+
+.option {
+	border: 2px solid black;
+	border-radius: 10px;
+	background-color: white;
+	font-size: 20px;
+	font-weight: 600;
+	line-height: 80px;
+    margin: auto 30px;
+	text-align: center;
+    height: 80px;
+	width: 200px;
+}
+
+.option:hover {
+	background-color: #ddd;
+}

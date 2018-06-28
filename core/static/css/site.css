@@ -9,12 +9,16 @@ body {
 }
 
 a {
-    color: black;
+    color: rgb(0,0,200);
     text-decoration: none;
 }
 
 a:hover {
-    color: black;
+    color: rgb(0,0,150);
+}
+
+a * {
+	color: black;
 }
 
 div.menu_link {
@@ -30,13 +34,19 @@ div.menu_link:hover {
     background-color: greenyellow;
 }
 
+.recuo {
+    margin-left: auto;
+    margin-right: 0;
+}
+
 .menu {
     background-color: forestgreen;
     display: flex;
     flex-flow: row nowrap;
     font-size: 18px;
     height: 80px; 
-    justify-content: center;
+    justify-content: start;
+    padding: 0 20px;
     width: 100%;
 }
 

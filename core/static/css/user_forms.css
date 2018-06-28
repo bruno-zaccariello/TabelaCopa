@@ -1,0 +1,80 @@
+input {
+    border: 1px solid black;
+    border-radius: 10px;
+    font-size: 18px;
+    height: 40px;
+    padding: 10px;
+    width: 100%;
+}
+
+button {
+    background-color: lightgray;
+    border-color: green green darkgreen darkgreen;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    height: 30px;
+    width: 150px;
+}
+
+button:focus {
+    outline: none;
+}
+
+button:active {
+    background-color: darkgray;
+}
+
+input:focus {
+    border-color: white;
+    outline:none;
+}
+
+label {
+    font-size: 18px;
+    font-weight: 600;
+    padding-left: 10px;
+}
+
+.form_box {
+    background-color: rgba(15, 46, 15, 0.4);
+    border: 1px solid darkgreen;
+    border-radius: 10px;
+    display: flex;
+    flex-flow: column nowrap;
+    margin: 50px auto;
+    padding: 10px;
+    width: 400px;
+}
+
+.form_errors {
+    display: flex;
+    flex-flow: column nowrap;
+    margin: 50px auto;
+    padding: 10px;
+    width: 400px;
+}
+
+
+.field {
+    margin: 5px auto;
+    width: 80%;
+}
+
+.errorlist {
+    color: darkred;
+    list-style: none;
+    list-style-type: none;
+    text-decoration: none;
+    margin: 2px auto;
+    padding: 0;
+    width: 100%;
+}
+
+.row {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    margin: 10px 0;
+}

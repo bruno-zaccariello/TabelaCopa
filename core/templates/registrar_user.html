@@ -1,0 +1,50 @@
+<html>
+
+<head>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+    
+
+    <link rel="stylesheet" type="text/css" href="/static/css/site.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/user_forms.css">
+
+    <title> Tabela da Copa </title>
+</head>
+
+<body>
+
+    <section class="content">
+        
+        <form method="POST">
+
+        {% csrf_token %}
+
+        <div class="form_box">    
+
+        {% for field in form %}
+
+                <div class="field field_label">{{ field.label_tag }}</div>
+
+                <div class="field field_input">{{ field }}</div> 
+
+                <div class="field">{{ field.errors }}</div>
+
+        {% endfor %}
+
+            <div class="row">
+
+                <a href="{% url 'authenticate' %}"><button type="button">Voltar</button></a>
+
+                <button type="submit">Cadastrar</button>
+
+            </div>
+        
+        </div>
+
+
+        </form>
+
+    </section>
+
+</body>
+    
+</html>

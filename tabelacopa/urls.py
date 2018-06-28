@@ -16,11 +16,17 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from core.views import *
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name="index"),
-    path('add_partida/8426', add_partida, name="add_partida"),
-    path('add_calendario/8426', add_calendario, name="add_calendario"),
-    path('grupo/<int:id_grupo>/', tab_grupo, name="tab_grupo")
+    path('add_partida/', add_partida, name="add_partida"),
+    path('add_calendario/', add_calendario, name="add_calendario"),
+    path('grupo/<int:id_grupo>/', tab_grupo, name="tab_grupo"),
+    path('register/', cadastro, name="cadastro"),
+    path('login/', auth_views.login, {'template_name': 'login.html'}, name='login'),
+    path('logout/', auth_views.logout, name='logout'),
+    path('authenticate/', authenticate, name="authenticate"),
+	path('user_profile', user_profile, name="user_profile")
 ]

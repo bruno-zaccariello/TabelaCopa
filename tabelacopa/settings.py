@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '9l^%9v1&euj=!p62z25k+a6!dr2h8ctu-)=+!^(u9hdn75&ak#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['tabelacopa.azurewebsites.net']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -81,20 +81,15 @@ DATABASES = {
     }
 }
 
-'''DATABASES = {
-    'default': {
-        'ENGINE': 'sql_server.pyodbc',
-        'NAME': 'tabelacopadb',
-        'USER': 'bcz-admin',
-        'PASSWORD': '@dmin123',
-        'HOST': 'bcz.database.windows.net',
-        'PORT': '',
-    }
-}'''
-
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
+
+LOGIN_URL = 'home'
+LOGOUT_URL = 'logout'
+
+LOGIN_REDIRECT_URL = 'index'
+LOGOUT_REDIRECT_URL = 'index'
 
 AUTH_PASSWORD_VALIDATORS = [
     {
