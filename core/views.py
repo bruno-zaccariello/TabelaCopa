@@ -90,7 +90,7 @@ def cadastro(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
         if form.is_valid():
-            return HttpResponseRedirect('login')
+            return HttpResponseRedirect('/login/')
     else:
         form = UserCreationForm()
     context = {
