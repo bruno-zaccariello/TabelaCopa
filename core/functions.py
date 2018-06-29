@@ -35,7 +35,7 @@ def make_id(partidaform):
     grupo = str(partidaform.fkid_time.fkid_grupo.nome_grupo.split(' ')[1])
     i = 1
     lista = []
-    for partida in Partida.objects.order_by('id_partida'):
+    for partida in Partida.objects.filter(fkid_user=user.id).order_by('id_partida'):
         if len(lista) == 0 :
             lista.append(partida)
         elif partida.id_partida != lista[-1].id_partida:
