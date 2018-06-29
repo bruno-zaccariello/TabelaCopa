@@ -88,21 +88,21 @@ def add_calendario(request):
 
 
 def cadastro(request):
-    if request.method == 'POST':
-        form = UserCreationForm(request.POST)
-        if form.is_valid():
-            form.save()
-	    username = form.cleaned_data.get('username')
-            raw_password = form.cleaned_data.get('password1')
-            user = authenticate(username=username, password=raw_password)
-            login(request, user)
-            return HttpResponseRedirect('')
-    else:
-        form = UserCreationForm()
-    context = {
-        'form':form
-    }
-    return render(request, 'registrar_user.html', context)
+	if request.method == 'POST':
+		form = UserCreationForm(request.POST)
+		if form.is_valid():
+			form.save()
+			username = form.cleaned_data.get('username')
+			raw_password = form.cleaned_data.get('password1')
+			user = authenticate(username=username, password=raw_password)
+			login(request, user)
+			return HttpResponseRedirect('')
+	else:
+		form = UserCreationForm()
+	context = {
+		'form':form
+		}
+	return render(request, 'registrar_user.html', context)
 
 def tab_grupo(request, id_grupo):
     grupo = Grupos.objects.get(pkid_grupo=id_grupo)
