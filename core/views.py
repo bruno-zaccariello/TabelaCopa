@@ -1,5 +1,6 @@
 from django.http import request, HttpResponse, HttpResponseRedirect
 from django.contrib.auth.decorators import login_required, user_passes_test
+from django.contrib.auth import authenticate
 from django.shortcuts import render
 from django.forms import formset_factory
 from core.models import *
@@ -13,7 +14,7 @@ import operator
 
 __all__ = ['index', 'add_partida', 'tab_grupo', 'add_calendario', 'cadastro', 'authenticate', 'user_profile', 'authenticate']
 
-def authenticate(request):
+def authenticate_user(request):
 	if request.user.is_authenticated:
 		return HttpResponseRedirect('home')
 	return render(request, 'authenticate.html')
@@ -91,7 +92,11 @@ def cadastro(request):
         form = UserCreationForm(request.POST)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect('/login/')
+	    username = form.cleaned_data.get('username')
+            raw_password = form.cleaned_data.get('password1')
+            user = authenticate(username=username, password=raw_password)
+            login(request, user)
+            return HttpResponseRedirect('')
     else:
         form = UserCreationForm()
     context = {
