@@ -12,7 +12,7 @@ import operator
 
 # Create your views here.
 
-__all__ = ['index', 'add_partida', 'tab_grupo', 'add_calendario', 'cadastro', 'authenticate', 'user_profile', 'authenticate']
+__all__ = ['index', 'add_partida', 'tab_grupo', 'add_calendario', 'cadastro', 'authenticate_user', 'user_profile', 'authenticate']
 
 def authenticate_user(request):
 	if request.user.is_authenticated:
