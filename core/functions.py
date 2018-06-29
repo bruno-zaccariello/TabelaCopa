@@ -32,23 +32,23 @@ def teams_by_user(request, grupo=None):
     return times
 
 def make_id(partidaform):
-    grupo = str(partidaform.fkid_time.fkid_grupo.nome_grupo.split(' ')[1])
-    i = 1
-    lista = []
-    for partida in Partida.objects.filter(fkid_user=user.id).order_by('id_partida'):
-        if len(lista) == 0 :
-            lista.append(partida)
-        elif partida.id_partida != lista[-1].id_partida:
-            lista.append(partida)
-    for partida in lista:
-        if partida.id_partida[0] == grupo:
-            if int(partida.id_partida[1]) == i:
-                i += 1
-            else:
-                break
-    id_partida =  grupo + str(i)
-    print(id_partida)
-    return id_partida
+	grupo = str(partidaform.fkid_time.fkid_grupo.nome_grupo.split(' ')[1])
+	i = 1
+	lista = []
+	for partida in Partida.objects.filter(fkid_user=user.id).order_by('id_partida'):
+		if len(lista) == 0 :
+			lista.append(partida)
+		elif partida.id_partida != lista[-1].id_partida:
+			lista.append(partida)
+	for partida in lista:
+		if partida.id_partida[0] == grupo:
+			if int(partida.id_partida[1]) == i:
+				i += 1
+			else:
+				break
+	id_partida =  grupo + str(i)
+	print(id_partida)
+	return id_partida
 
 def calculate_points(PF1, PF2):     
     if PF1.qtd_gols > PF2.qtd_gols:
