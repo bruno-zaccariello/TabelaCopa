@@ -31,7 +31,7 @@ def teams_by_user(request, grupo=None):
             time.update(info)
     return times
 
-def make_id(partidaform):
+def make_id(user, partidaform):
 	grupo = str(partidaform.fkid_time.fkid_grupo.nome_grupo.split(' ')[1])
 	i = 1
 	lista = []
@@ -135,7 +135,7 @@ def update_db(request, PartidaForm):
             time2.update(info.get('t2'))
 
             # Make match ID, relate the FKs and save the matches
-            id_partida = make_id(PF1)
+            id_partida = make_id(user, PF1)
             PF1.id_partida, PF2.id_partida = id_partida, id_partida
             PF1.fkid_user, PF2.fkid_user = request.user.id, request.user.id
             PF1.save()
