@@ -27,6 +27,6 @@ urlpatterns = [
     path('register/', cadastro, name="cadastro"),
     path('login/', auth_views.login, {'template_name': 'login.html'}, name='login'),
     path('logout/', auth_views.logout, name='logout'),
-    path('authenticate/', authenticate, name="authenticate"),
+    path('authenticate/', authenticate_user, name="authenticate"),
 	path('user_profile', user_profile, name="user_profile")
 ]
