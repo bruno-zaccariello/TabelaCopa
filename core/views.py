@@ -1,6 +1,6 @@
 from django.http import request, HttpResponse, HttpResponseRedirect
 from django.contrib.auth.decorators import login_required, user_passes_test
-from django.contrib.auth import authenticate
+from django.contrib.auth import authenticate, login
 from django.shortcuts import render
 from django.forms import formset_factory
 from core.models import *
@@ -96,7 +96,7 @@ def cadastro(request):
 			raw_password = form.cleaned_data.get('password1')
 			user = authenticate(username=username, password=raw_password)
 			login(request, user)
-			return HttpResponseRedirect('')
+			return HttpResponseRedirect('/')
 	else:
 		form = UserCreationForm()
 	context = {
